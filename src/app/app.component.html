@@ -1,0 +1,35 @@
+<div class="container">
+  <table class="table table-bordered table-hover">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Mobile</th>
+    </tr>
+    <tr *ngFor="let item of xmlItems">
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.gender}}</td>
+      <td>{{item.mobile}}</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <button (click)="getData()">Fetch Data</button>
+
+  <!-- <div *ngFor="let image of data" style="text-align:center">
+    <h3>
+      {{ image.title }}
+    </h3>
+    <img width="200" alt="thumbnail" [src]="image.thumbnailUrl">
+  </div> -->
+
+</div>
+
+<div class="gallery" *ngFor="let image of data">
+  <a target="_blank" [href]="image.href">
+    <img [src]="image.thumbnailUrl" width="300" height="200">
+  </a>
+  <div class="desc">{{image.title}}</div>
+</div>
